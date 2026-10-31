@@ -2,7 +2,7 @@
 name = "rustls"
 version = "0.23.46"
 edition = "2021"
-rust-version = "1.71"
+rust-version = "1.97"
 license = "Apache-2.0 OR ISC OR MIT"
 readme = "../README.md"
 description = "Rustls is a modern TLS library written in Rust."
@@ -23,6 +23,7 @@ brotli = ["dep:brotli", "dep:brotli-decompressor", "std"]
 custom-provider = []
 fips = ["aws_lc_rs", "aws-lc-rs?/fips", "webpki/aws-lc-rs-fips"]
 logging = ["log"]
+mtc = ["webpki/mtc", "aws_lc_rs"]
 prefer-post-quantum = ["aws_lc_rs"]
 read_buf = ["rustversion", "std"]
 ring = ["dep:ring", "webpki/ring"]

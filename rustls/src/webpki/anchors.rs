@@ -1,6 +1,8 @@
 use alloc::vec::Vec;
 use alloc::{fmt, format};
 
+#[cfg(feature = "mtc")]
+use pki_types::mtc;
 use pki_types::{CertificateDer, TrustAnchor};
 use webpki::anchor_from_trusted_cert;
 
@@ -76,6 +78,33 @@ impl RootCertStore {
         Ok(())
     }
 
+    #[cfg(feature = "mtc")]
+    /// Add a single DER-encoded Merkle Tree Certificate to the store.
+    ///
+    /// This method is identical to [Self::add], but allows for the specification of multiple
+    /// out-of-band MTC parameters.
+    pub fn add_mtc<'a>(
+        &mut self,
+        der: CertificateDer<'a>,
+        cosigner_policy: mtc::CosignerPolicy,
+        revoked_ranges: &[core::range::RangeInclusive<u64>],
+        additional_cosigners: Vec<mtc::Cosigner<'a>>,
+        trusted_subtrees: Vec<mtc::TrustedSubtree>,
+    ) -> Result<(), Error> {
+        self.roots.push(
+            webpki::anchor_from_trusted_mtc_cert(
+                &der,
+                cosigner_policy,
+                revoked_ranges,
+                additional_cosigners,
+                trusted_subtrees,
+            )
+            .map_err(pki_error)?
+            .to_owned(),
+        );
+        Ok(())
+    }
+
     /// Return the DER encoded [`DistinguishedName`] of each trust anchor subject in the root
     /// cert store.
     ///
@@ -133,6 +162,8 @@ fn root_cert_store_debug() {
         subject: Der::from_slice(&[]),
         subject_public_key_info: Der::from_slice(&[]),
         name_constraints: None,
+        #[cfg(feature = "mtc")]
+        mtc_config: None,
     };
     let store = RootCertStore::from_iter(iter::repeat(ta).take(138));
 
