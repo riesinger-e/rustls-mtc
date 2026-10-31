@@ -1,0 +1,6 @@
+Landmark 1 at tree size 1:
+  Landmark subtree [0, 1) with hash jBUG7ZnmLbQ0OB1cjHcPvMhWSWlwIgcErlA9grh2H6c=
+  Landmark subtree [1, 1) with hash 47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=
+Landmark 2 at tree size 2013:
+  Landmark subtree [0, 1024) with hash vEIQ188YP+HQ7i7k+pnWtltjfrZlAgm18GjbGMTKZDk=
+  Landmark subtree [1024, 2013) with hash Mil0IQ/90Zudomo3F8PvIWn+ktns3BAxCgAdWaOYJh4=

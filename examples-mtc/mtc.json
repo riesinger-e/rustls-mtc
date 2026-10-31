@@ -1,0 +1,71 @@
+{
+  "Version": "plants-07",
+  "ID": "32473.1",
+  "LogNumber": 1,
+  "Cosigners": [
+    {
+      "CosignerID": "32473.1",
+      "SignatureAlgorithm": "mldsa44",
+      "PrivateKey": "MDQCAQAwCwYJYIZIAWUDBAMRBCKAIAABAgMEBQYHCAkKCwwNDg8QERITFBUWFxgZGhscHR4f"
+    },
+    {
+      "CosignerID": "32473.2.1",
+      "SignatureAlgorithm": "mldsa44",
+      "PrivateKey": "MDQCAQAwCwYJYIZIAWUDBAMRBCKAIFjaimQAg5B4OTbZNTnt/YcmjPmbijnynHnvsyPLk8Sg"
+    }
+  ],
+  "CACert": {
+    "NotBefore": "2020-01-01T00:00:00Z",
+    "NotAfter": "2030-12-31T23:59:59Z",
+    "IsCA": true,
+    "KeyUsage": ["CertSign"],
+    "MinSerial": {"Log": 1, "Index": 0},
+    "MaxSerial": {"Log": 5, "Index": 281474976710655}
+  },
+  "Entries": [
+    {
+      "PublicKey": "MIIFMjALBglghkgBZQMEAxEDggUhAGJMhOYHOmlhMt2yLbiE+8hjdke4hWaFCQ7wcmZanb01vQmZmJOwNz9+TNOmnQovDQbxD858wo9A9XkOhz/zxphGc8//OsqpMUl+w+KNrZXayvEqagxnVlQnHcQZZr8wBdcuIPgJmOXtBrpEiVjXeFg8h2BISOehd9A2BwyUdFjyVm3CLtxa7Y/ZnYPkyCKcLkohYPb6/49qWibMG8qv3FsMdlKPKF75IdcLKDsgd5qYzl/kiu8133VYFdnZx8LnRCK6o2jQqMJ+vetdwCkpf155SOOq8FnoG+eVtlIHvAOpMxtftr0ki4QwbsraSraJRv0pqaMznpYR4Y/FoPoGAVPjmzni6dxueFshXcI5NzGKmdZuNjCMzZmYNcsZYkuMqKynLZgOwAprZJpLpuAoBlvihI48oVc8PbYYNeE79iTuNVpT+5vvQMGeTFzE5n80HIzicJQiUMwBuwmioP086gOHGBQGVNUXyTdHQsDicct9WdI/6a26qrTSBPXPa8E11jOyI5dwDeJ4Oee8G016uJccz7DhDE43vkMCD4G9Ugb9Mge+UJqq9GG+QQafDOIX5yumouI4KVXPXZ9EPlNAen56skJ2Faf0ZYphVRicsKbAERhDy/R+4GI4sC5j/VEmEOQ81SWEpTqYDmC6wHKtjGdy8KZXRqLRQ+iwvkNOOj3ZyRu1eLCIcBlyZE9Geohv/of+qou0/1Qd3AkMy1lnB0zp2xFzwQUFxllEc/k9HWMS79ep/qMtoAowK6DbhXH47io7N4u+lg+OB0Tf6FXepO9u7B5/22A043KqimEISL7wYnJMe1o6rzZ6WUSVYOFnqV658mEmzFhifcGvN21AQdxlNVtN+hvPQ76uROHCeST9SkUFk9Ozv3M2C/Jif2CwpUV8Tb2TkHyW8PM4d4voxpE8FgHaEasOvsAd17HWYZN3dxy7TaxPmulNae+XgmiNf+pe5jMaeOo/Bixph7/n4wsphJcJL1+WIXpmBdk4vHKGISK3klI8nIX0nzQa/FyLa18lQFAn2vgJ9clAAHbrBQAbKtz10jxwY9vT9nWmViILi2YakCAqTmqkL4UMdrb81wRQj9QJyFCUlRaj9no0hmJ2p8TASVSMJVWeDZDXDwyzsoZjkAcljRgPjPX1/2wx4rVx8+rcHUTxIO5xP6ZC8vxVDtSMpiElxWtxBknbdj2PUdo8TGxJQ2EjgFZdFEs2in8Djtk8zmBulRlQX4xm7Sqna0VgThUmii0LZfVBFjwxC2Ukf2d8J+OXFC8Qowpr8A83DZYw79riygIDeCqIo86oFaRPv4F9kai/sW56Y2qUKRtV5dRVo3GeIdU8AHtchM4g69cbm/5OL3msCfTxiGl/xPwrm9vkk86SBdDR9NQfmy0+9QyqPbPAY9wz3/Ny9uj1jfO8nSA9vWYTlfzEM6OBVf9ajihKwYFoyxZqaCKp3s2KGq6iDRKt7JA1pM7B1YxlwIAi4J0DLXceDtEvzzRZc9sZogT8+76bkNVmqKjGC5mcS0gTYm3eymQsFbTMn0S5jd+tAUH7c0RQuid2CzAlIn9gWEHwTgcNosz71Gqy8peW6TGZ1G9UfL556/Usx7KBhNtQq3L5T+hliRtLKLCCeA7Mk1LkORfKrWyR+tC1oKm8S7azfjWc9Taw94YM0bS6IGmw2f34BPUvvrARbvfoZywel579y/19IPeKBA9mQJiEN3XU48ans+tOBlcEFFCsSOjDNpHb3rVcY2+Run0=",
+      "NotBefore": "2020-01-01T00:00:00Z",
+      "NotAfter": "2030-12-31T23:59:59Z",
+      "DNSNames": ["a.example"],
+      "KeyUsage": ["DigitalSignature"],
+      "ExtKeyUsage": ["ServerAuth"],
+      "Checkpoints": ["standalone", "landmark"],
+      "Certificates": [
+        {"Checkpoint": "standalone", "Cosigners": ["32473.1"]},
+        {"Checkpoint": "standalone", "Cosigners": ["32473.1", "32473.2.1"]},
+        {"Checkpoint": "landmark"}
+      ]
+    },
+    {
+      "Null": true
+    },
+    {
+      "Repeat": 2000,
+      "PublicKey": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEyxiC16lts+SOL87OwHhGDzK9/dyUd7sM80jAf53VL+AV38HoHKpmA7LJoYLf4yVhcVleNcxufsAfcPueTLX0Vg==",
+      "NotBefore": "2020-01-01T00:00:00Z",
+      "NotAfter": "2030-12-31T23:59:59Z",
+      "DNSNames": ["c.example"],
+      "KeyUsage": ["DigitalSignature"],
+      "ExtKeyUsage": ["ServerAuth"]
+    },
+    {
+      "Repeat": 10,
+      "Null": true
+    },
+    {
+      "PublicKey": "MIIFMjALBglghkgBZQMEAxEDggUhAJ31C6W+8CPV7CUaHy+wGYZXBNXx4dliFNzNewYZjADh4wXGrLXlqmTCnjHhWsSHQROplfZUc0xBKXevKnCFUhpBVyTjsZX3zxwpBWfW9ocw35KiDxpMuxGEcfuRu80Uz5L3ELAIGdZKzTvcyKlsb/MgtwfB6yAfmZJLfQGL+0BnL1bYyty8A+vtgIkSkeRWMDMTtpL2/Bqi0+BjCVFDi5utanRB1Z3Ju4K7n4fo9bwuhQFG1qGxR194CkpO/My6J37U6Fav52yYBkoOmV2d4fYGJu9PcVqZDTAlryaNzHLmAvroktCfLlzBJaBYSfNGncYJ2KKzb+zAM7rinGMLuUgz8hlRJzgi6Bz9RTmzNEhWZO02LdmwQh4UBlqpV7UqEYqMC+VWeAKoFHwCSn/t9PF07wbfnIj8FUCHEnATPUWx8yI3vGMFL8PuERutqRu7e8pXfPFCJaNzj/c5XiUDhrFBXx7lQsfk3r2D0ke2N2/mnOn6WSozL7f00SoET/yg1U9ijl3JCGvmr4uM0AN2JHolZJ2yiCp0H5CaWkjjkj3Sq/QZQ1L3N4pucWHb1Th4gwfkafdGc7S1RHt0cYBuvNqi2DlkhycPT7JVlIeXwPMIenzx8ma+nITa1/mTbwGqB6EZ602OLCMO054WzwWCnMYkNRT3wSn++zIC1iAfNSyqonDaJxh2025pbGoKtb0MlrXX3nRcL+Wa52Bf0yAezhPy3KG5I7AvPxjS6t482qJUcBWL8S9yPExVlCH1yzz4iUvzKglbyKqJFVPkvj1iASC9jrRvY6T2X24yiIPmny2x7DDOQWwClT3/x/M+a7vGlSro4g/kbh43d3amYLVyO4QM9ant7p7odUh3IOLSh8242Heg2yXc3ZKfvIoMBDDOhie8FP4+Dh4tpmRJTLaCre3e8HQfkDLRSOHxv6IjQYYLfT8iJkSw9zDcPleiwVecYynjgZuaIgVHc+I2fwTepBOouDu3Pkr8uEjjIzxS/Fgfk6y+r1MYDOXfGAKMUnvEJS49YSBkQoybswsH3PtFeKTnn6TXrhrdaO5jPMljAX82xEB6ABakGnmFvshQYFMr/hB8vJXE3LYa+tSG6ojTJtAInaVe1Q0AnxdJRUFLA9XDMuuBsYaTCTinOxVRfY4u1LqdMoe8UHiGJhjZJl0V5NdpA//qnade6WWt0s4fKWI1UPGYhCC2b6jKgRUqJ8Q1sFC2VD40Ab6MnpuJA1oftWo6AmI5CddNaHZ18sK6cfy5+KWoFZzSI2nZCo47574xB90sKI5+GLDMc++UbLt+PRnOu5JqMmqmEP/GtyFuCgxQe/0dQ0R3NlFG8n2xQth/HowNi943wI0AY2UYQJT1Qtkj5XgijWQWv4z+Qxbaf/TZV2Rj1S2vvxepaxABBIgjHxXKnyZmNiaT8YBPmsoqEMg3+OMaiGLOID+R1A9rDqpE/KyWfjO3KNkvArWQ4Qu9Vvli5qqsGvsePuDbU0P8+AhmC1sgPvvst4SZ3ucsHJ7p5a7rNFqkVAD0j6lB4wc2gizH7Bwp+H4AGZqWM5oiOZDznxWL/j3tGxVRpaLvdUNGe24r8PLwHl+F9yO0L5ohGKE8aWDmRP+3m1uursi3FtqeW3eHP/7q7BP98WNQR87XSmTwijbu8Q5USMrBZ1L3lUDuZVhYEtuEbVGo6xSHKy5rq4ROByinjwGlsF+rmz3RNP1tLUsVIVnP1Ji2C5dN8dF1brJLNqaUJGlfrrqC2Kw=",
+      "NotBefore": "2020-01-01T00:00:00Z",
+      "NotAfter": "2030-12-31T23:59:59Z",
+      "DNSNames": ["b.example"],
+      "KeyUsage": ["DigitalSignature"],
+      "ExtKeyUsage": ["1.3.6.1.5.5.7.3.2"],
+      "Checkpoints": ["standalone", "landmark"],
+      "Certificates": [
+        {"Checkpoint": "standalone", "Cosigners": ["32473.1"]},
+        {"Checkpoint": "standalone", "Cosigners": ["32473.1", "32473.2.1"]},
+        {"Checkpoint": "landmark"}
+      ]
+    }
+  ]
+}
