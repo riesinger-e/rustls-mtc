@@ -2861,7 +2861,7 @@ dependencies = [
 [[package]]
 name = "rustls-pki-types"
 version = "1.15.1"
-source = "git+ssh://git@git.riesinger.xyz/masterarbeit/rustls-pki-types-mtc?branch=mtc#1900d831b61d314ff27c0e9b7eea7bf37be58891"
+source = "git+https://github.com/riesinger-e/rustls-pki-types-mtc.git?branch=mtc#1900d831b61d314ff27c0e9b7eea7bf37be58891"
 dependencies = [
  "zeroize",
 ]
@@ -2921,7 +2921,7 @@ dependencies = [
 [[package]]
 name = "rustls-webpki"
 version = "0.103.16"
-source = "git+ssh://git@git.riesinger.xyz/masterarbeit/rustls-webpki-mtc.git?branch=rel-0.103-mtc#341a9b52969386cfb6bbba8d06c4b59026c7215f"
+source = "git+https://github.com/riesinger-e/rustls-webpki-mtc.git?branch=rel-0.103-mtc#6b0cec4702cdb3e0864d077ddb74c5a2e2c32fce"
 dependencies = [
  "aws-lc-rs",
  "ring",
