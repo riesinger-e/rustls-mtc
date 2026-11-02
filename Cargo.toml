@@ -24,6 +24,7 @@ members = [
   "rustls-provider-test",
   # rustls cryptography provider for fuzzing
   "rustls-fuzzing-provider",
+  "examples-mtc",
 ]
 
 ## Deliberately not included in `members`:

@@ -13,7 +13,7 @@ Contains example code on using rustls with MTC certs ([RFC draft](https://www.ie
 - `certs/`: directory containing the generated certificates, see below
 - `keys/`: directory containing example private keys
 
-## Run the examples
+## Run the binaries
 
 To run the example code using the generated certificates, you need to add the following entries to your `/etc/hosts`:
 ```text
@@ -24,13 +24,17 @@ For both the client and the server, where are several command line options:
 
 ### Server
 
+```sh
+cargo run --bin server -- --help
+```
+
 - `--client-auth`: enforce TLS client authentication, off by default
-- `--port`: port to listen on, option has a default value.
-- `--cert`: path to the certificate, option has a default value. 
+- `--port`: port to listen on, option has a default value `4443`.
+- `--cert`: path to the certificate, option has a default value `./certs/cert_0_0.pem`. 
   If `--key` is set, this option is required.
-- `--key`: path to the X.509 private key, option has a default value. 
+- `--key`: path to the X.509 private key, option has a default value `./keys/server.pem`. 
   If `--cert` is set, this option is required.
-- `--ca`: path to the CA certificate, option has a default value. 
+- `--ca`: path to the CA certificate, option has a default value `./certs/ca_cert.pem`. 
   Only relevant when `--client-auth` is set.
 - `--cosigner`: path to a `cosigner.json`. Default is no cosigners (except for the CA).
   Argument may be given multiple times, all given cosigners will be required.
@@ -39,15 +43,19 @@ For both the client and the server, where are several command line options:
 
 ### Client
 
-- `--server-name`: DNS server name to connect to, option has a default value. 
-- `--port`: port to listen on, option has a default value.
+```sh
+cargo run --bin client -- --help
+```
+
+- `--server-name`: DNS server name to connect to, option has a default value `a.example`.
+- `--port`: port to listen on, option has a default value `4443`.
 - `--cert`: path to the client certificate, default value is `None`. 
   If `--key` is set, this option is required.
   When this option is set, TLS client authentication is enabled.
 - `--key`: path to the client private key, default value is `None`. 
   If `--cert` is set, this option is required.
   When this option is set, TLS client authentication is enabled.
-- `--ca`: path to the CA certificate, option has a default value.
+- `--ca`: path to the CA certificate, option has a default value `./certs/ca_cert.pem`.
 - `--cosigner`: path to a `cosigner.json`. Default is no cosigners (except for the CA).
   Argument may be given multiple times, all given cosigners will be required.
 - `--landmarks`: log number, followed by a colon, followed by the path to a `landmarks.txt`. Default is no landmarks.
@@ -73,3 +81,86 @@ The following certificates are given / may be generated from the `mtc.json` into
   - `cert_0_0.pem` contains a standalone cert signed only by the CA.
   - `cert_0_1.pem` contains a standalone cert signed by the CA and by the cosigner.
   - `cert_0_2.pem` contains a landmark cert, unsigned.
+
+## Usage examples
+
+### Simple TLS
+
+Server:
+
+```sh
+cargo run --bin server
+```
+
+Client:
+
+```sh
+cargo run --bin client
+```
+
+### Log the used session keys (`SSLKEYLOGFILE`)
+
+Client:
+
+```sh
+SSLKEYLOGFILE=/path/to/keylog/file cargo run --bin client
+```
+
+### Server using a certificate with multiple cosigners
+
+Use the cert on the server:
+
+```sh
+cargo run --bin server -- --key ./keys/server.pem --cert ./certs/cert_0_1.pem
+```
+
+To let the client require the additional cosigner:
+
+```sh
+cargo run --bin client -- --cosigner ./cosigner.json
+```
+
+Notes:
+- The client will still work when the `--cosigner` option is not set, but it won't verify the additional cosigner.
+- The client will fail certificate verification when the server uses its default cert `cert_0_0.pem`, as it is not signed by the additional cosigner.
+
+### Server using a landmark certificates
+
+Use the cert on the server:
+
+```sh
+cargo run --bin server -- --key ./keys/server.pem --cert ./certs/cert_0_2.pem
+```
+
+To let the client know about the landmarks:
+
+```sh
+cargo run --bin client -- --landmarks 1:./landmarks.txt
+```
+
+Notes:
+- The client will fail certificate verification when `--landmarks` option is not set.
+
+### Mutual TLS
+
+Start the server requiring client authentication:
+
+```sh
+cargo run --bin server -- --client-auth
+```
+
+Start the client with a private key and cert to present:
+
+```sh
+cargo run --bin client -- --key ./keys/client.pem --cert ./certs/cert_2012_0.pem
+```
+
+Notes:
+- The connection will fail if the client is not started with `--key` and `--cert`.
+- Just as in the examples above, you can use certificates signed by multiple cosigners (for the client: `cert_2012_1.pem`) or landmark certificates (`cert_2012_2.pem`) for both the client and the server.
+  The options used in the above examples work on both binaries.
+
+## Testing with Wireshark
+
+Running `./test-with-wireshark.sh /path/to/sslkeylogfile` runs all possible server/client combinations, recording the TLS session key to the given `SSLKEYLOGFILE`.
+The network traffic created by this script may be recorded with Wireshark, the `SSLKEYLOGFILE` can be used to decrypt the TLS sessions.

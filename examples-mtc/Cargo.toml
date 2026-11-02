@@ -1,0 +1,13 @@
+[package]
+name = "examples-mtc"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+base64.workspace = true
+clap.workspace = true
+regex.workspace = true
+rustls = { path = "../rustls", features = ["mtc"] }
+serde.workspace = true
+serde_json.workspace = true
+x509-parser.workspace = true

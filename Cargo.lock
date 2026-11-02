@@ -953,6 +953,19 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "00d174d5400e5e8fd687ad1049e2f578285fa914201b1af7e8b112a4546bd826"
 
 [[package]]
+name = "examples-mtc"
+version = "0.1.0"
+dependencies = [
+ "base64 0.22.1",
+ "clap",
+ "regex",
+ "rustls",
+ "serde",
+ "serde_json",
+ "x509-parser 0.17.0",
+]
+
+[[package]]
 name = "ff"
 version = "0.13.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
