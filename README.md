@@ -1,3 +1,11 @@
+# MTC Fork
+
+This is fork for my master's thesis. It implements the Merkle Tree Certificates RFC Draft v7 ([Link](https://datatracker.ietf.org/doc/draft-ietf-plants-merkle-tree-certs/07/)).
+
+Using the example in `./examples-mtc`, you can check try out the implementation. The example code also covers the public API changes.
+
+---
+
 <p align="center">
   <img width="460" height="300" src="https://raw.githubusercontent.com/rustls/rustls/main/admin/rustls-logo-web.png">
 </p>
